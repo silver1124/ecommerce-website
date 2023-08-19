@@ -1,6 +1,6 @@
 import { Button, Container, Nav, Navbar, Col } from "react-bootstrap";
 
-const Header = () => {
+const Header = props => {
   return (
     <div>
       <Navbar bg="dark" expand="sm" variant="dark">
@@ -15,7 +15,7 @@ const Header = () => {
           </Col>
           <Col  className="col-1 d-flex justify-content-center ">
             <Nav>
-              <Button>Cart</Button>
+              <Button onClick={props.onShowCart}>Cart</Button>
               <span className="badge text-info">0</span>
             </Nav>
           </Col>
