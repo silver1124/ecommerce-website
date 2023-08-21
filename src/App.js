@@ -1,9 +1,10 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Header from './component/Header';
-import Music from './component/Music';
 import Footer from './component/Footer';
 import Cart from './component/Cart';
+import CartProvider from './store/CartProvider';
+import ProductList from './component/ProductList';
 
 
       
@@ -19,12 +20,12 @@ function App() {
     }
 
   return (
-    <Fragment>
+    <CartProvider>
       {cartShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler}/>
-      <Music/> 
+      <ProductList onShowCart={showCartHandler} /> 
       <Footer/>
-    </Fragment>
+    </CartProvider>
     );
   }
 

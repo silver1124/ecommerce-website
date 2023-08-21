@@ -1,9 +1,17 @@
 import { Button, Container, Nav, Navbar, Col } from "react-bootstrap";
+import { useContext } from "react";
+import CartContext from "../store/CartContext";
 
 const Header = props => {
+
+  const cartCtx = useContext(CartContext)
+  const numberOfItems = cartCtx.cart.reduce((sum, item)=>{
+    return sum + item.quantity
+  },0)
+
   return (
     <div>
-      <Navbar bg="dark" expand="sm" variant="dark">
+      <Navbar bg="dark" expand="sm" style={{height: "35px"}} className= "fixed-top" variant="dark">
         <Container>
         <Col className="col-1 "></Col>
         <Col>
@@ -15,8 +23,9 @@ const Header = props => {
           </Col>
           <Col  className="col-1 d-flex justify-content-center ">
             <Nav>
-              <Button onClick={props.onShowCart}>Cart</Button>
-              <span className="badge text-info">0</span>
+              <Button onClick={props.onShowCart}>Cart
+              </Button>              
+              <span className="badge text-info">{numberOfItems}</span>
             </Nav>
           </Col>
         </Container>
