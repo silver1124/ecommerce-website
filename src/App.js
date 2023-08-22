@@ -1,33 +1,16 @@
-import { useState } from 'react';
-import './App.css';
-import Header from './component/Header';
-import Footer from './component/Footer';
-import Cart from './component/Cart';
-import CartProvider from './store/CartProvider';
-import ProductList from './component/ProductList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Store from './NavBar.js/Store';
+import AboutNav from './NavBar.js/AboutNav';
 
-
-      
 function App() {
-
-  const [cartShown, setCartShown] = useState(false);
-
-    const showCartHandler = ()=>{
-      setCartShown(true)
-    }
-    const hideCartHandler= () => {
-      setCartShown(false)
-    }
-
   return (
-    <CartProvider>
-      {cartShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler}/>
-      <ProductList onShowCart={showCartHandler} /> 
-      <Footer/>
-    </CartProvider>
-    );
-  }
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/About" element={<AboutNav />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
