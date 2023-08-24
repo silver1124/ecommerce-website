@@ -20,6 +20,7 @@ const Header = props => {
               <Nav.Link as={Link} to="/Home">Home</Nav.Link>
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/About">About</Nav.Link>
+              <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
             </Nav>
           </Col>
           <Col  className="col-1 d-flex justify-content-center ">
