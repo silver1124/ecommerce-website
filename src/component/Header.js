@@ -18,7 +18,7 @@ const Header = props => {
         <Col>
             <Nav className="me-auto d-flex justify-content-center">
               <Nav.Link as={Link} to="/Home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/">Store</Nav.Link>
               <Nav.Link as={Link} to="/About">About</Nav.Link>
               <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
             </Nav>

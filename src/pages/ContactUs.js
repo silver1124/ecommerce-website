@@ -33,9 +33,9 @@ const ContactUs = () => {
       setError(err);
     }
     console.log(data);
-    const name = "";
-    const email = "";
-    const phone = "";
+    name.current.value="";
+    email.current.value="";
+    phone.current.value="";
   };
 
   return (

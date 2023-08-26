@@ -2,6 +2,7 @@ import { Button, Container, Col, Row } from "react-bootstrap";
 import { Fragment } from "react";
 import CartContext from "../store/CartContext";
 import { useContext } from "react";
+import { Link } from 'react-router-dom'
 
 const productsArr = [
   {
@@ -99,8 +100,10 @@ const ProductList = props => {
         <Row>{productsArr.map((item, index) => (
               <Col key={index} className="col-6 ">
                 <div className=" mt-4 d-flex flex-column align-items-center  ">
+                  <Link to={`/products/${item.id}`}>
                   <h3>{item.title}</h3>
                   <img src={item.imageUrl} alt={item.title} width="250px" />
+                  </Link>
                   <div
                     className="d-flex justify-content-between bg-white mt-4"
                     style={{ width: "300px" }}
@@ -119,8 +122,10 @@ const ProductList = props => {
           {merchArr.map((item, index) => (
             <Col key={index} className="col-6 ">
               <div className=" mt-4 d-flex flex-column align-items-center">
+              <Link to={`/products/${item.id}`}>
                 <h3>{item.title}</h3>
                 <img src={item.imageUrl} alt={item.title} width="250px" />
+                </Link>
                 <div
                   className="d-flex justify-content-between bg-white mt-4"
                   style={{ width: "300px" }}

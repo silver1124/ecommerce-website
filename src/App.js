@@ -3,6 +3,7 @@ import Store from './NavBar.js/Store';
 import AboutNav from './NavBar.js/AboutNav';
 import HomeNav from './NavBar.js/HomeNav';
 import ContactNav from './NavBar.js/ContactNav';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Store />} />
         <Route path="/About" element={<AboutNav />} />
         <Route path="/Contact" element={<ContactNav />} />
+        <Route path='/products/:id' element={<ProductDetails/>}/>
       </Routes>
     </Router>
   );
